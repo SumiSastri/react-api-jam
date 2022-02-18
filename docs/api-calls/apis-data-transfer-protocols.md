@@ -1,10 +1,14 @@
 # What is an Application Programming Interface (API)
 
-Application Programming Interfaces allow a transfer of data (resources) from the client data-layer to servers via the service or network-layer.
+Application Programming Interfaces allow a transfer of data (resources) from the client data-layer to servers via the service-layer/ network-layer/ application layer. The terms are used interchangeably and it is in this service-layer protocol that defines the basic patterns of the dialogue.
 
-In the network-layer, servers then transfer this information to downstream backend operations - data validation, data storage, data transformation, etc. This interaction happens with the help of API-endpoints created in the back-end.
+In the service-layer, servers transfer data calss from the client to the server. This information is sent via a header to downstream backend operations - data validation, data storage, data transformation, etc. A response is sent back based on this request.
 
-Data is transported in JavaScript Object Notation`.json` files or .`.xml` files from the front-end to the back-end.
+This interaction between the request and response happens with the help of API-endpoints created in the back-end.
+
+In general, a service-layer is an abstraction of computer resources and a client does not have to be concerned with how the server performs while fulfilling the request and delivering the response. The client only has to understand the response based on the well-known application protocol, i.e. the content and the formatting of the data for the requested service. Network engineers specialise in keeping the networks stable.
+
+There are 2 protocols - SOAP/ REST based on the type of files they expect to be transfered.
 
 ## Simple Object Access Protocol (SOAP) vs. Representational State Transfer (REST)?
 
