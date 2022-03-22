@@ -2,7 +2,9 @@ As the React library uses the MVC model. The component is only ready to receive 
 
 The first render is with the initial state and when state is mutated, the component is re-rendered with the new updated statte.
 
-State management tools deal with this differently (Redux/ Mobx) but fundamentally the components consume the API data and state changes when the component requires some state change
+State management tools deal with this differently (Redux/ Mobx) but fundamentally the components consume the API data and state changes when the component requires some state change.
+
+An API call is a synonym for an AJAX call [https://daveceddia.com/ajax-requests-in-react/]
 
 # Class-based components
 
@@ -33,12 +35,23 @@ class App extends Component {
   }
 
 componentDidMount(){
-    const data = fetch('/api-data')
+    const data = fetch('/url')
     .then((response) => response.json())
     <!-- .then((response) => console.log(response)) -->
     .then((data) => this.setState({ initialState: data }));
 }
 
+```
+
+With axios the inbuilt resolver function resolves the body of the response to json - so eliminates that step
+
+```
+componentDidMount() {
+    axios.get('/url')
+      .then(data => this.setState({ initialState: res.data }))
+      .catch(err => console.log(err));
+  }
+}
 ```
 
 # Hooks
@@ -47,7 +60,7 @@ With hooks, the lifecycle methods are abstracted out of the component and the `u
 
 As the `componentDidMount()` called only once, it is invoked after component successfully renders on DOM-API's DOM-tree with all its children in this life-cycle method as it is accessing the DOM and interacting with the DOM), the DOM-tree is an array and once the component mounts it re-renders every time there is a change in the state or props with the `render()` method, the only mandatory method that every component has.
 
-The `useEffect` method is a call back function which calls the API data and sets state, to prevent polling or constant re-renders as the call back constantly is requesting the `render()` as state is set with the `useEffect()` method to prevent the re-render of the DOM-tree and empty array representing the DOM tree is used before the function call is complete.
+The `useEffect` method is a call back function which calls the API data and sets state, to prevent polling or constant re-renders as the call back constantly is requesting the `render()` as state is set with the `useEffect()` method to prevent the re-render of the DOM-tree and empty array representing the DOM tree is used before the function call is complete. The Hook combines the lifecycle methods `componentDidMount`,`componentDidUpdate` and `componentWillUnmount`.
 
 ```
 [initialState, setInitialState] = useState()

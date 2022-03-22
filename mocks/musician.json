@@ -1,0 +1,122 @@
+{   
+    "musicianHubOnboarding": {
+        "onboarding_page": {
+            "header": "Musicans Hub",
+            "text": "Welcome to the musicians hub where you will find all you need to work in our studio"
+        },
+        "alarms": {
+            "header": "The studio has a fire-alarm, fire-exit, smoke-detector alarm and carbon-monoxide alarm",
+            "more_info": "These are maintained by the studio",
+            "alarms_guides": "Please download the following guides for your references"
+        },    
+        "condensation": {
+            "header": "Please download the How To Prevent Condensation in the studio guide",
+            "condensation_guides": "Please download the following guides for your references"
+        },
+        "emergency_contacts": {
+            "header": "Please provide us with 2 people we may contact in case of an emergency"
+        },
+        "energy_services": {
+            "header": "You need to set up your own payment for energy use",
+            "more_info": "Your current service provider is ....",
+        },
+        "local_council": {
+            "header": "Your local council to contact for any services",
+        },
+        "maintenance_schedule": {
+            "header": "This is maintenance shedule for the studio",
+            "more_info": "These are the dates for the testing, maintaing of studio equipment"
+        },
+        "submit": {
+            "label": "I have read and understood the documents in this section"
+        }
+    },
+    "musicianHubOffboarding": {
+        "offboarding_page": {
+            "header": "Musicans Hub",
+            "text": "We are sorry you are leaving us here is a checklist for you to ensure a smooth transition"
+        },
+        "energy_services": {
+            "header": "Please take your final reading",
+            "more_info": "You will need to pay your bills before you leave the studio"
+        },
+        "local_council": {
+            "header": "Please inform the local council that your contract with the studio is over"
+        },
+        "maintenance_schedule": {
+            "header": "There will be a checkout clerk please sign the inventory before you leave",
+        },
+        "submit": {
+            "label": "I have read and understood the documents in this section"
+        }
+    },
+    "studio_agreement": {
+        "header": "Your studio agreement which you have signed with your music producer is here, if you need to upload it you can do it here for future reference",
+        "upload_document": ""
+    },
+    "theme": "Classical",
+    "urlName": "musician-hub", 
+    "userType": "Musician",
+    "userStatus": "Sessions-musician",
+    "userJourneyStage1": "Onboarding",
+    "userJourneyStage2": "Offboarding"
+}
+
+
+export type RegisteredUserTypes = {
+    firstName: string;
+    middleName: string;
+    lastName: string;
+    fullLegalName: string;
+    emailAddress: string;
+    mobilePhoneNumber: number;
+    country: string;
+    address1: string;
+    address2: string;
+    address3: string;
+    city: string;
+    postcode: string;
+    isAuthenticated: boolean;
+    isLoggedIn: boolean;
+    optInEmail: "yes" | "no" | "unknown";
+    optInSMS: "yes" | "no" | "unknown";
+    optInWhatsApp: "yes" | "no" | "unknown";
+    optInPost: "yes" | "no" | "unknown";
+    optInMobilePhone: "yes" | "no" | "unknown";
+  };
+
+  import { createContext, Dispatch, SetStateAction } from "react";
+
+    import { RegisteredUserTypes } from "../contexts/registeredUserContext/types/registeredUserTypes";
+    
+    const initialValue: {
+      registeredUser: RegisteredUserTypes;
+      setRegisteredUserContext: Dispatch<SetStateAction<RegisteredUserTypes>>;
+    } = {
+      registeredUser: {
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        fullLegalName: "",
+        emailAddress: "",
+        mobilePhoneNumber: 123,
+        country: "",
+        address1: "",
+        address2: "",
+        address3: "",
+        city: "",
+        postcode: "",
+        isAuthenticated: false,
+        isLoggedIn: false,
+        optInEmail: "unknown",
+        optInSMS: "unknown",
+        optInPost: "unknown",
+        optInWhatsApp: "unknown",
+        optInMobilePhone: "unknown"
+      },
+      setRegisteredUserContext() { },
+    };
+    
+    const RegisteredUserContext = createContext(initialValue);
+    
+    export default RegisteredUserContext;
