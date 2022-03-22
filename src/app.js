@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Robots from "./pages/robots/robots";
+import RobotHome from "./pages/robots/react-2016/RobotHome";
 import "./index.css";
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="tc bg dark-blue bg-light-red">
-        <Robots />
+        <RobotHome />
       </div>
     );
   }

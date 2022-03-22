@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import CardList from "./cardlist";
-import SearchBox from "../../components/searchbox";
-import ScrollyBar from "../../components/scroll";
-import ErrorBoundary from "../../components/errorboundary";
-import "../../index.css";
+import RobotGallery from "../RobotGallery";
+import SearchBox from "../../../components/searchbox";
+import ScrollyBar from "../../../components/scroll";
+import ErrorBoundary from "../../../components/errorboundary";
+import "../../../index.css";
 
-class Robots extends Component {
+class RobotHome extends Component {
   constructor() {
     super();
     this.state = {
@@ -44,11 +44,11 @@ class Robots extends Component {
         <SearchBox searchChange={this.onSearchChange} />
         <ScrollyBar>
           <ErrorBoundary>
-            <CardList robots={filteredRobots} />
+            <RobotGallery robots={filteredRobots} />
           </ErrorBoundary>
         </ScrollyBar>
       </div>
     );
   }
 }
-export default Robots;
+export default RobotHome;
