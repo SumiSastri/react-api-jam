@@ -13,10 +13,8 @@ const RobotsIndexPage = () => {
   const [robots, setRobots] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchField, setSearchField] = useState("");
-  const [filteredRobots, setFilteredRobots] = useState([]);
 
   //  call useEffect to get data instead of componentDidMount
-  //  call the search handler in the dependency array
   useEffect(() => {
     const fetchRobots = async () => {
       await fetch(usersUrl)
@@ -25,22 +23,9 @@ const RobotsIndexPage = () => {
       setIsLoading(false);
     };
     fetchRobots();
-  }, [filteredRobots]);
+  }, []);
 
-  const handleSearchChange = (searchValue) => {
-    setSearchField(searchValue);
-    if (searchField !== "") {
-      const filteredRobots = usersUrl.filter((robots) => {
-        return robots.name.toLowerCase().includes(searchField.toLowerCase());
-      });
-      setFilteredRobots(filteredRobots);
-    } else {
-      setFilteredRobots(usersUrl);
-    }
-  };
-  //   console.log(filteredRobots, "filtered");
-
-  //   CONSOLE LOGS TO CHECK DATA FLOWS FROM API AND THEN INTO COMPONNT
+  //   CONSOLE LOGS TO CHECK DATA FLOWS FROM API AND THEN INTO COMPONENT
   //   useEffect(() => {
   //     const fetchRobots = async () => {
   //       await fetch(usersUrl)
@@ -53,14 +38,24 @@ const RobotsIndexPage = () => {
   //     fetchRobots();
   //   }, []);
 
+  // this key word removed from utility functions - these can be set to a state array but this is easier
+  const filteredRobots = robots.filter((robot) => {
+    return robot.name.toLowerCase().includes(searchField.toLowerCase());
+  });
+
+  const onSearchChange = (event) => {
+    setSearchField(event.target.value);
+  };
+
   return (
     !isLoading && (
       <div className="tc bg dark-blue bg-light-red">
         <h1>Robot Friends with</h1>
+        {/* don't change order as search box needs to be outside the scroll and error */}
+        <SearchBox searchChange={onSearchChange} />
         <ScrollyBar>
           <ErrorBoundary>
-            <SearchBox onChange={(e) => handleSearchChange(e.target.value)} />
-            <RobotGallery isLoading={isLoading} robots={robots} />
+            <RobotGallery robots={filteredRobots} />
           </ErrorBoundary>
         </ScrollyBar>
       </div>
