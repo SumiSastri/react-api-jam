@@ -1,8 +1,8 @@
 # Robot Friends
 
 Robot Friends uses 2 APIs
-[https://jsonplaceholder.typicode.com/users]
-[https://robohash.org]
+curl [https://jsonplaceholder.typicode.com/users]
+curl [https://robohash.org]
 CSS
 [http://tachyons.io/docs/]
 

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import "../../../index.css";
+import { usersUrl } from "../../../constants/listOfURLs";
 import RobotGallery from "../RobotGallery";
 import SearchBox from "../../../components/searchbox";
 import ScrollyBar from "../../../components/scroll";
 import ErrorBoundary from "../../../components/errorboundary";
-import "../../../index.css";
 
 class RobotHome extends Component {
   constructor() {
@@ -15,13 +16,13 @@ class RobotHome extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(usersUrl)
       .then((response) => response.json())
-      .then((users) => this.setState({ robots: users }));
+      .then((responseData) => this.setState({ robots: responseData }));
 
     // NOTE: do not remove checks the loading message works
     //   .then((response) => console.log(response))
-    //   .then((users) => this.setState({}));
+    //   .then((responseData) => this.setState({}));
   }
 
   onSearchChange = (event) => {
