@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "../../../index.css";
 import { usersUrl } from "../../../constants/listOfURLs";
 import RobotGallery from "../RobotGallery";
-import SearchBox from "../../../components/searchbox";
-import ScrollyBar from "../../../components/scroll";
+import SearchFilter from "../../../components/SearchFilter";
+import ScrollyBar from "../../../components/ScrollyBar";
 import ErrorBoundary from "../../../components/errorboundary";
 
 class RobotHome extends Component {
@@ -42,7 +42,7 @@ class RobotHome extends Component {
     ) : (
       <div className="tc bg dark-blue bg-light-red">
         <h1>Robot Friends</h1>
-        <SearchBox searchChange={this.onSearchChange} />
+        <SearchFilter searchChange={this.onSearchChange} />
         <ScrollyBar>
           <ErrorBoundary>
             <RobotGallery robots={filteredRobots} />

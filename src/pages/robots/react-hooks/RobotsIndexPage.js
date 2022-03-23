@@ -4,15 +4,15 @@ import React, { useState, useEffect } from "react";
 import "../../../index.css";
 import { usersUrl } from "../../../constants/listOfURLs";
 import RobotGallery from "../RobotGallery";
-import ScrollyBar from "../../../components/scroll";
-import SearchBox from "../../../components/searchbox";
-import ErrorBoundary from "../../../components/errorboundary";
+import ScrollyBar from "../../../components/ScrollyBar";
+import SearchFilter from "../../../components/SearchFilter";
+import ErrorBoundary from "../../../components/ErrorBoundary";
 
 const RobotsIndexPage = () => {
   // call the use State hook refactor and remove class component make it a functional component
   const [robots, setRobots] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [searchField, setSearchField] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   //  call useEffect to get data instead of componentDidMount
   useEffect(() => {
@@ -50,9 +50,9 @@ const RobotsIndexPage = () => {
   return (
     !isLoading && (
       <div className="tc bg dark-blue bg-light-red">
-        <h1>Robot Friends with</h1>
+        <h1>Robot Friends with React Hooks</h1>
         {/* don't change order as search box needs to be outside the scroll and error */}
-        <SearchBox searchChange={onSearchChange} />
+        <SearchFilter searchChange={onSearchChange} />
         <ScrollyBar>
           <ErrorBoundary>
             <RobotGallery robots={filteredRobots} />
