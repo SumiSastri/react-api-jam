@@ -5,12 +5,7 @@ import List from "../../../components/List";
 import Card from "../../../components/Card";
 import RenderImages from "../../../components/RenderImages";
 
-// deconstructs state which has been set to the response object maps over the response
-// returns display of the card reusable component with the title and body of the response
-// const PostList = (props) => {
-//   const displayPosts = props.displayPosts;
-//   console.log("props", displayPosts);
-
+// child of Index page
 const BlogList = ({ displayPosts, handleDeleteClick }) => {
   return (
     <List className="cards">

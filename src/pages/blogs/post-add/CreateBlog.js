@@ -6,7 +6,6 @@ import { contentUrl } from "../../../../constants/listOfURLs";
 const CreateBlog = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("Select an author");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,16 +13,14 @@ const CreateBlog = () => {
     const addContent = {
       title,
       body,
-      author /*contentGenre*/,
     };
 
     // post data in the submit  handler (201 created but cached - referesh db you will get 200)
+    // THIS BODY IS response.body (not the user title-body)
     fetch(contentUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addContent),
-    }).then(() => {
-      history.go("-1");
     });
     console.log("CHECK SUBMISSION:", addContent);
   };
@@ -32,19 +29,12 @@ const CreateBlog = () => {
   return (
     <div className="form-container">
       <h2>Authorized admin users: Add content</h2>
-
       <form onSubmit={handleSubmit}>
         <FormInput
           className="inpt-2s"
           label="Add blog title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-        />
-        <FormInput
-          className="inpt-2s"
-          label="Name of author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
         />
         <FormInput
           className="inpt-2s"

@@ -1,7 +1,7 @@
 import React from "react";
 // import RobotsIndexPage from "./pages/robots/RobotsIndexPage";
 import "./index.css";
-import DisplayBlogs2016 from "./pages/blogs/get-display/react-2016/DisplayBlogs2016";
+import DisplayBlogs2016 from "./pages/blogs/react-2016/DisplayBlogs2016";
 
 const App = () => {
   return (

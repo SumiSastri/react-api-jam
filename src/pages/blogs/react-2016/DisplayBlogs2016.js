@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 
-import "../../../../styles/containerStyles.css";
-import BlogList from "../BlogList";
-import SearchInput from "../../../../components/SearchInput";
+import "../../../styles/containerStyles.css";
+import BlogList from "../get-display/BlogList";
+import SearchInput from "../../../components/SearchInput";
+import CreateBlogModal from "./CreateBlogModal";
 
 // CONTENT PAGES
+// FOR REF - USER OBJECT
+// {
+//   "userId": 1,
+//   "id": 1,
+//   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+//   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+// },
 export class DisplayBlogs2016 extends Component {
   constructor(props) {
     super(props);
@@ -84,9 +92,7 @@ export class DisplayBlogs2016 extends Component {
               this.updateSearchInputs("searchFilterResults", event.target.value)
             }
           />
-          <button className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-green">
-            Add more blogs
-          </button>
+          <CreateBlogModal className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-green" />
           <hr />
         </div>
         <BlogList onClick={handleDeleteClick} displayPosts={filteredPosts} />
