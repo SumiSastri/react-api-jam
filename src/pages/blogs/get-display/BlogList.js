@@ -11,15 +11,12 @@ import RenderImages from "../../../components/RenderImages";
 //   const displayPosts = props.displayPosts;
 //   console.log("props", displayPosts);
 
-const BlogList = ({ displayPosts }) => {
+const BlogList = ({ displayPosts, handleDeleteClick }) => {
   return (
     <List className="cards">
       {displayPosts.map((post) => {
         return (
           <div className="pa3 pa5-ns" key={post.id}>
-            <button className="f6 link dim br-pill ba ph3 pv2 mb2 dib light-purple">
-              Edit
-            </button>
             <RenderImages
               className="w-100 f5 measure"
               alt="Cats"
@@ -29,14 +26,23 @@ const BlogList = ({ displayPosts }) => {
               className="measure lh-copy"
               title={post.title}
               body={post.body}
+              id={post.id}
             >
-              <h6>{post.title}</h6>
-              <p>{post.body}</p>
+              <h6>{post.title}</h6>{" "}
+              <button className="f6 link dim br-pill ba ph3 pv2 mb2 dib light-purple">
+                Edit title?
+              </button>
+              <p>{post.body}</p>{" "}
+              <button className="f6 link dim br-pill ba ph3 pv2 mb2 dib light-purple">
+                Edit copy?
+              </button>
+              <button
+                onClick={handleDeleteClick}
+                className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink"
+              >
+                Delete
+              </button>
             </Card>
-
-            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">
-              Delete
-            </button>
           </div>
         );
       })}

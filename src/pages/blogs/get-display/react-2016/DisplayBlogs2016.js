@@ -61,6 +61,12 @@ export class DisplayBlogs2016 extends Component {
       );
     });
 
+    const handleDeleteClick = () => {
+      fetch(`https://jsonplaceholder.typicode.com/posts/${displayPosts.id}`, {
+        method: "DELETE",
+      });
+    };
+
     return !displayPosts.length ? (
       <div>
         <h2>Please wait this page is still loading</h2>
@@ -81,8 +87,9 @@ export class DisplayBlogs2016 extends Component {
           <button className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-green">
             Add more blogs
           </button>
+          <hr />
         </div>
-        <BlogList displayPosts={filteredPosts} />
+        <BlogList onClick={handleDeleteClick} displayPosts={filteredPosts} />
       </div>
     );
   }
