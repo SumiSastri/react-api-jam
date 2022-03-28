@@ -1,0 +1,15 @@
+.filters-container {
+  display: flex;
+}
+.select-filter {
+  background-color: papayawhip;
+  outline: none;
+  cursor: pointed;
+  box-shadow: 0 2px 0 1px peru;
+  font-size: 15px;
+  color: brown;
+}
+
+.label {
+  padding: 10px;
+}

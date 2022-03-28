@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Buttons = (properties) => {
-	return (
-		<div>
-			<button>Press me</button>
-		</div>
-	);
+  return (
+    <div>
+      <button />
+    </div>
+  );
 };
 
 export default Buttons;

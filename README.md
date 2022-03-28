@@ -9,3 +9,7 @@ Resources:
 
 Semantic jsx with the fragment tag [http://blog.jmes.tech/react-fragment-and-semantic-html/]
 Plural Sight demo: [https://github.com/howarddierking/ps-rest-fundamentals]
+
+PropTypes:
+`npm install --save prop-types`
+Documentation[https://reactjs.org/docs/typechecking-with-proptypes.html]
