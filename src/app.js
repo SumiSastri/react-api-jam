@@ -1,13 +1,13 @@
 import React from "react";
-// import RobotHome from "./pages/robots/react-2016/RobotHome";
-import RobotsIndexPage from "./pages/robots/react-hooks/RobotsIndexPage";
+// import RobotsIndexPage from "./pages/robots/RobotsIndexPage";
 import "./index.css";
+import DisplayBlogs2016 from "./pages/blogs/get-display/react-2016/DisplayBlogs2016";
 
 const App = () => {
   return (
     <div className="tc bg dark-blue bg-light-red">
-      {/* <RobotHome /> */}
-      <RobotsIndexPage />
+      {/* <RobotsIndexPage /> */}
+      <DisplayBlogs2016 />
     </div>
   );
 };

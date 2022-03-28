@@ -1,7 +1,38 @@
 import React from "react";
-const Card = ({ children }) => {
+
+const Card = ({
+  id,
+  children,
+  className,
+  data,
+  datatestid,
+  label,
+  name,
+  options,
+  value,
+}) => {
   return (
-    <section className="bg-gold dib pa3 ma2 grow bg-animate transition: background-color .15s ease-in-out tc ba bw2 shadow-6"></section>
+    <section
+      id={id}
+      className={className}
+      data={data}
+      datatestid={datatestid}
+      label={label}
+      name={name}
+      options={options}
+      value={value}
+    >
+      {
+        children
+        // <div>
+        // {data.map((options) => (
+        //   <option key={options.id} value={options.value}>
+        //     {options.label}
+        //   </option>
+        // ))}
+        // </div>
+      }
+    </section>
   );
 };
 

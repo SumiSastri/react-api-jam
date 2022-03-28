@@ -1,18 +1,44 @@
 import React from "react";
-import Card from "./Card.js";
+// import Card from "./Card"; for props.children
 
-const List = ({ props }) => {
-  // if (true) {
-  // 	throw new Error('An Error Has Occured Check your Code!');
-  // }
-  // UNCOMMENT CODE FOR PRODUCTION
+const List = ({
+  id,
+  children,
+  className,
+  // replace with api-response data
+  data,
+  datatestid,
+  label,
+  name,
+  options,
+  value,
+}) => {
   return (
-    <div>
-      {props.map((i) => {
-        return <Card key={i} />;
-      })}
-    </div>
+    <section
+      id={id}
+      className={className}
+      data={data}
+      datatestid={datatestid}
+      label={label}
+      name={name}
+      options={options}
+      value={value}
+    >
+      {
+        children
+        //   <div>
+        //   {data.map((item, i) => {
+        //     return (
+        //       <Card
+        //         key={i}
+        //         id={item.id}
+        //         name={item.name}
+        //       />
+        //     );
+        //   })}
+        // </div>
+      }
+    </section>
   );
 };
-
 export default List;

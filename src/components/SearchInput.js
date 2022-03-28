@@ -10,8 +10,6 @@ const SearchFilter = ({
   onSubmit,
   placeholder,
   required,
-  searchfield,
-  searchChange,
   type,
   value,
 }) => {
@@ -23,8 +21,6 @@ const SearchFilter = ({
           className={className}
           datatestid={datatestid}
           label={label}
-          searchField={searchfield}
-          searchChange={searchChange}
           name={name}
           onChange={onChange}
           onSubmit={onSubmit}

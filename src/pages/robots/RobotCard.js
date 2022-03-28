@@ -1,10 +1,10 @@
 import React from "react";
-
 import RenderImages from "../../components/RenderImages";
 
-const RobotCard = ({ name, description, favefood, id }) => {
+// props passed down from the parent list component where response data destructured
+const RobotCard = ({ name, username, email, id }) => {
   return (
-    <div className="dib pa3 ma2 grow bg-animate .15s ease-in-out tc ">
+    <div className="dib pa3 ma2 grow bg-animate .15s ease-in-out tc">
       <RenderImages
         className="bg-gold dib pa3 ma2 grow bg-animate transition: background-color .15s ease-in-out tc ba bw2 shadow-6"
         src={`https://robohash.org/${id}`}
@@ -12,8 +12,8 @@ const RobotCard = ({ name, description, favefood, id }) => {
       />
       <div>
         <h2>{name}</h2>
-        <p>{description}</p>
-        <p>{favefood}</p>
+        <p>{username}</p>
+        <p>{email}</p>
       </div>
     </div>
   );

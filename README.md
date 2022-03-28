@@ -17,3 +17,7 @@ Documentation[https://reactjs.org/docs/typechecking-with-proptypes.html]
 Libraries:
 `npm install react-datepicker --save`
 Documentation[https://reactdatepicker.com/]
+
+Linting
+`npm install eslint --save-dev`
+https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b
