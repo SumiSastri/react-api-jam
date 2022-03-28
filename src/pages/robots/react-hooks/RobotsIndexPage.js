@@ -5,7 +5,7 @@ import "../../../index.css";
 import { usersUrl } from "../../../constants/listOfURLs";
 import RobotGallery from "../RobotGallery";
 import ScrollyBar from "../../../components/ScrollyBar";
-import SearchFilter from "../../../components/SearchFilter";
+import SearchInput from "../../../components/SearchInput";
 import ErrorBoundary from "../../../components/ErrorBoundary";
 
 const RobotsIndexPage = () => {
@@ -52,7 +52,12 @@ const RobotsIndexPage = () => {
       <div className="tc bg dark-blue bg-light-red">
         <h1>Robot Friends with React Hooks</h1>
         {/* don't change order as search box needs to be outside the scroll and error */}
-        <SearchFilter searchChange={onSearchChange} />
+        <SearchInput
+          className="pa3 b--hot-pink bw2 br-pill bg-light-yellow"
+          type="search"
+          placeholder="search friends"
+          onChange={onSearchChange}
+        />
         <ScrollyBar>
           <ErrorBoundary>
             <RobotGallery robots={filteredRobots} />

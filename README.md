@@ -13,3 +13,7 @@ Plural Sight demo: [https://github.com/howarddierking/ps-rest-fundamentals]
 PropTypes:
 `npm install --save prop-types`
 Documentation[https://reactjs.org/docs/typechecking-with-proptypes.html]
+
+Libraries:
+`npm install react-datepicker --save`
+Documentation[https://reactdatepicker.com/]

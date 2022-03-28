@@ -106,8 +106,18 @@
   cursor: not-allowed;
 }
 
-.btn-5 {
-  background-color: lightslategrey;
+.button-five {
+  background-color: darkblue;
+  margin: 15px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 2px;
+  outline: none;
+}
+
+.button-six {
+  background-color: darkgreen;
   margin: 15px;
   padding: 10px;
   cursor: pointer;
