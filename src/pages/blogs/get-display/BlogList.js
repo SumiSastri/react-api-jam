@@ -16,15 +16,28 @@ const BlogList = ({ displayPosts }) => {
     <List className="cards">
       {displayPosts.map((post) => {
         return (
-          <Card className="pa3 pa5-ns" key={post.id}>
+          <div className="pa3 pa5-ns" key={post.id}>
+            <button className="f6 link dim br-pill ba ph3 pv2 mb2 dib light-purple">
+              Edit
+            </button>
             <RenderImages
               className="w-100 f5 measure"
               alt="Cats"
               src={`https://robohash.org/${post.id}?set=set4`}
             />
-            <h4>{post.title}</h4>
-            <p className="measure lh-copy">{post.body}</p>
-          </Card>
+            <Card
+              className="measure lh-copy"
+              title={post.title}
+              body={post.body}
+            >
+              <h6>{post.title}</h6>
+              <p>{post.body}</p>
+            </Card>
+
+            <button className="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-pink">
+              Delete
+            </button>
+          </div>
         );
       })}
     </List>

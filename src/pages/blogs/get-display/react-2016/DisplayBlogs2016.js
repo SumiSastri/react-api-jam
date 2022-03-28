@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import "../../../../styles/containerStyles.css";
 import BlogList from "../BlogList";
 import SearchInput from "../../../../components/SearchInput";
 
@@ -25,10 +26,10 @@ export class DisplayBlogs2016 extends Component {
         this.setState({ displayPosts: responseData.slice(0, 9) })
       );
     // .then((posts) => this.setState({}));
-    // do not remove checks the loading message works
+    // do not remove checks the loading message works - or use setTimeOut
   }
 
-  //   custom function to update music genre/ music genre and the search filter results
+  //   custom function to updates search results
   updateSearchInputs = (key, value) => {
     if (key === "searchFilterResults") {
       this.setState({ error: null, [key]: value }, () => {
@@ -66,19 +67,22 @@ export class DisplayBlogs2016 extends Component {
       </div>
     ) : (
       <div className="tc bg navy bg-light-yellow">
-        <SearchInput
-          className="pa3 b--light-purple bw2 br-pill bg-light-blue"
-          label="Search Posts"
-          placeholder="Search posts"
-          type="search"
-          value={searchFilterResults}
-          onChange={(event) =>
-            this.updateSearchInputs("search input check:", event.target.value)
-          }
-        />
-        {/* Replaced displayed posts with the filtered posts for search filter */}
+        <div className="grid-1">
+          <SearchInput
+            className="pa2 b--light-purple bw3 br-pill bg-light-blue"
+            label="Search Posts"
+            placeholder="Search posts"
+            type="search"
+            value={searchFilterResults}
+            onChange={(event) =>
+              this.updateSearchInputs("searchFilterResults", event.target.value)
+            }
+          />
+          <button className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-green">
+            Add more blogs
+          </button>
+        </div>
         <BlogList displayPosts={filteredPosts} />
-        {/* <PostList displayPosts={displayPosts} />                 */}
       </div>
     );
   }
