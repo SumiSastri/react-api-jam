@@ -37,19 +37,28 @@ export class DisplayBlogs2016 extends Component {
     // do not remove checks the loading message works - or use setTimeOut
   }
 
-  //   custom function to updates search results
-  updateSearchInputs = (key, value) => {
+  // custom event handlers (update inputs)
+  // userSearchInput = React.createRef(); REFs usedto grab a single element on the DOM
+  // refs not recommended
+  handleSearchUpdates = (key, value) => {
     if (key === "searchFilterResults") {
       this.setState({ error: null, [key]: value }, () => {
-        //console.log("this noErrorState:", this);
+        // console.log("ERROR CHECK", this);
         this.setState({
           searchFilterResults: this.state.searchFilterResults,
         });
-        // console.log("this updatedFilter/UserState:", this);
+        // console.log("SEARCH CHECK", this.state.searchFilterResults);
       });
     } else {
       this.setState({ error: null, [key]: value });
     }
+  };
+  // custom event handlers (clicks)
+  handleDeleteClick = () => {
+    const postId = `https://jsonplaceholder.typicode.com/posts/${this.state.displayPosts.id}`;
+    fetch(postId, {
+      method: "DELETE",
+    });
   };
 
   render() {
@@ -57,7 +66,9 @@ export class DisplayBlogs2016 extends Component {
     // refactor and replace displayPosts with filteredPosts that you can search
     const { displayPosts, searchFilterResults } = this.state;
     //  console.log("this renderState:", this);
+    // EVENT HANDLERS ARE BOUND TO THE STATE OBJECT BUT NOT THE STATE OBJECT
 
+    // FILTER MULTIPLE ELEMENTS WITH OR NOT AND
     const filteredPosts = displayPosts.filter((displayPosts) => {
       return (
         displayPosts.body
@@ -68,34 +79,36 @@ export class DisplayBlogs2016 extends Component {
           .includes(searchFilterResults.toLowerCase())
       );
     });
-
-    const handleDeleteClick = () => {
-      fetch(`https://jsonplaceholder.typicode.com/posts/${displayPosts.id}`, {
-        method: "DELETE",
-      });
-    };
-
     return !displayPosts.length ? (
       <div>
         <h2>Please wait this page is still loading</h2>
       </div>
     ) : (
       <div className="tc bg navy bg-light-yellow">
-        <div className="grid-1">
+        <section className="grid-1">
           <SearchInput
             className="pa2 b--light-purple bw3 br-pill bg-light-blue"
             label="Search Posts"
             placeholder="Search posts"
+            // ref={this.userSearchInput}
             type="search"
             value={searchFilterResults}
             onChange={(event) =>
-              this.updateSearchInputs("searchFilterResults", event.target.value)
+              this.handleSearchUpdates(
+                "searchFilterResults",
+                event.target.value
+              )
             }
           />
           <CreateBlogModal className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-green" />
           <hr />
-        </div>
-        <BlogList onClick={handleDeleteClick} displayPosts={filteredPosts} />
+        </section>
+        <article>
+          <BlogList
+            onClick={this.handleDeleteClick}
+            displayPosts={filteredPosts}
+          />
+        </article>
       </div>
     );
   }
