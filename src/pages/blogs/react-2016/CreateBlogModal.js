@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
 
-import { contentUrl } from "../../../constants/listOfURLs";
+import { contentUrl } from "../../../data/constants/listOfURLs";
 import { PopUpModal } from "../../../components/PopUpModal";
 import { FormInput } from "../../../components/FormInput";
 

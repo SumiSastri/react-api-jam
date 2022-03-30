@@ -1,13 +1,15 @@
 import React from "react";
 // import RobotsIndexPage from "./pages/robots/RobotsIndexPage";
 import "./index.css";
-import DisplayBlogs2016 from "./pages/blogs/react-2016/DisplayBlogs2016";
+// import DisplayBlogs2016 from "./pages/blogs/react-2016/DisplayBlogs2016";
+import ToDoApp from "./pages/todo-list/react-2016/ToDoApp";
 
 const App = () => {
   return (
-    <div className="tc bg dark-blue bg-light-red">
+    <div>
       {/* <RobotsIndexPage /> */}
-      <DisplayBlogs2016 />
+      {/* <DisplayBlogs2016 /> */}
+      <ToDoApp />
     </div>
   );
 };
