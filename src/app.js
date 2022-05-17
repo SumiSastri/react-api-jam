@@ -1,6 +1,7 @@
 import React from "react";
-// import RobotsIndexPage from "./pages/robots/RobotsIndexPage";
 import "./index.css";
+
+// import RobotsIndexPage from "./pages/robots/RobotsIndexPage";
 // import DisplayBlogs2016 from "./pages/blogs/react-2016/DisplayBlogs2016";
 import ToDoApp from "./pages/todo-list/react-2016/ToDoApp";
 

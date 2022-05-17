@@ -1,32 +1,26 @@
-# Scaffolding:
+# Scaffolding
 
 This app has been scaffolding with Create-React-App
 
+# Access
+
+Clone or fork: [https://github.com/SumiSastri/react-api-jam]
+Install node `npm install -y ` 
+Check `.gitignore` ensure `.env` files are ignored if you have API keys
 # Available scripts
 
 `npm run start`
+`npm run test`
+# Testing
 
-# Libraries:
+Testing:
+`npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react react-test-renderer`
+`npm install --save-dev react-test-renderer`
+`npm install --save-dev @testing-library/react`
+`npm install --save-dev @testing-library/jest-dom`
+`npm install --save-dev @testing-library/react@12.1.2 `
 
-React-Datepicker:
-`npm install react-datepicker --save-dev`
-Documentation[https://reactdatepicker.com/]
-
-React-Modal:
-`npm install react-modal --save-dev`
-
-PropTypes:
-`npm install --save prop-types`
-Documentation[https://reactjs.org/docs/typechecking-with-proptypes.html]
-
-Linting
-`npm install eslint --save-dev`
-Documentation[https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b]
-
-# Resources and reading:
-
-Semantic jsx with the fragment tag [http://blog.jmes.tech/react-fragment-and-semantic-html/]
-Plural Sight demo: [https://github.com/howarddierking/ps-rest-fundamentals]
-
-Gitignore files [https://git-scm.com/docs/gitignore]
-Gitignore templates[https://github.com/github/gitignore]
+# APis
+users `https://jsonplaceholder.typicode.com/users`;
+posts `https://jsonplaceholder.typicode.com/posts`;
+Note: Further documentation in the docs folder in root.

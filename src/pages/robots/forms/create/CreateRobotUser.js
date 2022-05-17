@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { FormInput } from "../../../../components/FormInput";
-import { usersUrl } from "../../../../constants/listOfURLs";
+import { usersUrl } from "../../../../data/constants/listOfURLs";
 
 const CreateRobotUser = () => {
   const [name, setName] = useState("");

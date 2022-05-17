@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from "react";
 
 import "../../index.css";
-import { usersUrl } from "../../constants/listOfURLs";
+import { usersUrl } from "../../data/constants/listOfURLs";
 import RobotGallery from "./RobotGallery";
 import ScrollyBar from "../../components/ScrollyBar";
 import SearchInput from "../../components/SearchInput";
-import ErrorBoundary from "../../components/ErrorBoundary";
+import ErrorBoundary from "../../components/errorboundary";
 import CreateRobotUser from "./forms/create/CreateRobotUser";
 
 const RobotsIndexPage = () => {

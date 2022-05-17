@@ -33,6 +33,13 @@
     ]
   },
   "devDependencies": {
-    "react-modal": "^3.14.4"
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^28.0.2",
+    "jest": "^28.0.2",
+    "react-modal": "^3.14.4",
+    "react-test-renderer": "^18.1.0"
   }
 }
